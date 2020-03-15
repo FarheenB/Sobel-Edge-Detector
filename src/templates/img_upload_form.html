@@ -1,0 +1,100 @@
+<html>  
+<head>  
+    <title>upload</title> 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/design.css')}}"/>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+
+  <style>
+.container
+{
+  padding-top:40px !important;
+}
+h1{
+  padding-bottom: 15px !important;
+}
+  </style>
+
+
+
+</head>  
+
+<body>
+  
+        <section>
+  <div class="container">
+    <!-- For demo purpose -->
+    
+    <!-- End -->
+
+
+    <div class="row" >
+      <div class="col-lg-5 mx-auto" style="width:fit-content">
+        <div class="p-5 bg-white shadow rounded-lg"
+        style="
+    height: 550px;
+    padding-top: 7rem!important;
+    padding-bottom: 10rem!important;">
+
+<div class="row text-center">
+    <div class="col-lg-10 mx-auto">
+      <h1 class="display-4" style="font-size: 30px;">Image upload</h1>
+    </div>
+  </div>
+    <img src="static/images/upload-icon.jpg" alt="" width="100" class="d-block mx-auto mb-4 rounded-pill">
+          <form action = "/success" method = "post" enctype="multipart/form-data">  
+          
+            
+
+                <!-- <label for="customFile" class="custom-file-label rounded-pill" value="file">Choose File</label>
+            <input id="customFile" type="file" class="custom-file-input rounded-pill" name="file"> -->
+            <div class="custom-file">   
+              <input type="file" onchange="validateFileType()" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="file" accept=".jpg,.png,.tif,.jfif" required>   
+              <label class="custom-file-label rounded-pill" for="customFileLang">Choose File</label> 
+            </div>
+            
+            
+
+            <div class="upload text-center">
+            <input type = "submit" value="Upload" class="basic btn btn-success">
+              
+          </div>
+          
+        
+        </form>
+      </div>
+    </div>
+ </div>
+ </div>
+</section>
+<script>
+
+
+    function validateFileType(){
+        debugger;
+        var fileName = document.getElementById("customFileLang").value;
+        var idxDot = fileName.lastIndexOf(".") + 1;
+        var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+        if (extFile=="jpg" || extFile=="jpeg" || extFile=="png" || extFile=="tif" || extFile=="jfif"){
+            //TO DO
+        }else{
+            alert("Only jpg/jpeg, png, tiff and jfif files are allowed!");
+        }   
+    }
+
+
+
+    // Add the following code if you want the name of the file appear on select
+    $(".custom-file-input").on("change", function() {
+      var fileName = $(this).val().split("\\").pop();
+      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+    </script>
+</body>
+
+</html>  

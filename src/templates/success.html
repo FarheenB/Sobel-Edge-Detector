@@ -1,0 +1,87 @@
+<html>  
+<head>  
+<title>success</title> 
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>  -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/design.css')}}"/>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<style>
+
+
+.margin-field-top
+{
+  margin-top: 0.5em !important;
+}
+.padding-field-top
+{
+  margin-top: 1em !important;
+}
+.gray
+{
+  color: darkslategray;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: right !important;
+}
+p{
+  font-size:10px
+}
+
+</style>
+</head>  
+<body>
+<section>
+  <div class="container">
+    <div class="row text-center text-white">
+      <div class="col-lg-10 mx-auto">
+        <!-- <h1 class="display-4" style="font-size: 30px;">File uploaded successfully..!! -->
+        </h1>
+      </div>
+    </div>
+
+    <div class="row" style="
+    margin-top: 2em;
+">
+      <div class="col-lg-5 mx-auto" style="width:fit-content">
+          
+            <div class="p-5 bg-white shadow rounded-lg text-center" style="padding-top: 1em !important;padding-bottom: 0em !important; height:550px">
+                <h1 class="display-4" style="font-size: 30px;">Image uploaded Successfully...!!</h1>
+              <div>
+          <img width="350px" height= "220px" src='../static/images/{{name}}'>
+        </div>
+          <div class="padding-field-top">
+            <form action = "/detect" method = "post"> 
+              <div id="edge" class="text-center">
+                <p>Click Next if needed to perform Sobel Edge Detection on Unfiltered Image.
+                   Set the values if needed to perform Sobel Edge Detection on Filtered Image.
+                </p>
+              <table class="text-center" style="width:100%">
+                <tr><td><label> Sigma</label></td>
+                <td><input id="sigma" type="number" class="sigma margin-field-top" name="sigma"  value="0" min="0" style="width:100%" /></td></tr>
+              <tr>
+                <td>
+                <label> Window Size</label></td>
+                <td><input id="window-size" type="number" class="window-size margin-field-top" name="window-size" value="0" min="0" style="width:100%"/></td>
+                </table>
+              <div>
+                <input class="basic btn btn-success margin-field-top" type = "submit" id="Next" name="Next" value="Next">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div>
+        <form action = "/" method = "GET">  
+          <i class='fas fa-reply gray'></i>
+          <input class="btn gray" type = "submit" value="Back">  
+        </form> 
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+</body>  
+</html> 
