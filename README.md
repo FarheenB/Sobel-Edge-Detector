@@ -1,4 +1,4 @@
-# SobelEdgeDetector
+# Sobel Edge Detector
 
 ## Step 1- Run the App and Browse an image
 
@@ -22,7 +22,7 @@ Give the range of threshold to perform thresholding on the filtered image and pr
 
 The edge detection on original image and edge detection on the filtered image are displayed as below: 
 
-![](readme_imgs/screenshotDn.PNG)
+![](readme_imgs/screenshotDn.png)
 
 
 ## Step 6: After detection both the output images will be displayed and available for download. 
